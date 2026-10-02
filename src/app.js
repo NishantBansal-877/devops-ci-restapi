@@ -22,4 +22,11 @@ app.get("/version", (req, res) => {
   });
 });
 
+app.get("/status", (req, res) => {
+  res.status(200).json({
+    service: "devops-node-ci",
+    status: "running",
+  });
+});
+
 module.exports = app;
