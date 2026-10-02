@@ -28,4 +28,11 @@ describe("API", () => {
     expect(response.statusCode).toBe(200);
     expect(response.body).toHaveProperty("version");
   });
+
+  test("GET /status should return service status", async () => {
+    const response = await request(app).get("/status");
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.status).toBe("running");
+  });
 });
